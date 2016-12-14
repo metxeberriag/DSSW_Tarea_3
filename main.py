@@ -17,33 +17,35 @@ class RegisterHandler(webapp2.RequestHandler):
         self.response.write('''
         <html>
             <head>
+                <link rel="stylesheet" href="styles/estilo.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             </head>
             <body>
-                <form method="post" id="login">
+                <h1 class="register-title">DSSW - TAREA 3</h1>
+                <form method="post" id="login" class="register">
                     <table>
                         <tr>
                             <td class="label"> Nombre de usuario </td>
-                            <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." > </td>
+                            <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." class="register-input"> </td>
                             <td> <span id="errorUsername" style="color:red"></span> </td>
                         </tr>
                         <tr>
                             <td class="label"> Password </td>
-                            <td> <input type="password" name="password1" id="password1" value="" placeholder="Tu contraseña..."></td>
+                            <td> <input type="password" name="password1" id="password1" value="" placeholder="Tu contraseña..." class="register-input"></td>
                             <td> <span id="errorPassword1" style="color:red"></span> </td>
                         </tr>
                         <tr>
                             <td class="label">Repetir Password </td>
-                            <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes"> </td>
+                            <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes" class="register-input"> </td>
                             <td> <span id="errorPassword" style="color:red"></span> </td>
                         </tr>
                         <tr>
                             <td class="label"> Email </td>
-                            <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..."> </td>
+                            <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..." class="register-input"> </td>
                             <td> <span id="errorEmail" style="color:red"></span> </td>
                         </tr>
                     </table>
-                    <input type="submit" id="enviar">
+                    <input type="submit" id="enviar" class="register-button">
                 </form>
             </body>
             </html>''')
@@ -81,33 +83,35 @@ class RegisterHandler(webapp2.RequestHandler):
             self.response.write('''
         <html>
             <head>
+                <link rel="stylesheet" href="styles/estilo.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             </head>
             <body>
-                <form method="post" id="login">
+                <h1 class="register-title">DSSW - TAREA 3</h1>
+                <form method="post" id="login" class="register">
                     <table>
                         <tr>
                             <td class="label"> Nombre de usuario </td>
-                            <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." > </td>
+                            <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." class="register-input"> </td>
                             <td> <span id="errorUsername" style="color:red">'''+errorUsername+'''</span> </td>
                         </tr>
                         <tr>
                             <td class="label"> Password </td>
-                            <td> <input type="password" name="password1" id="password1" value="" placeholder="Tu contraseña..."></td>
+                            <td> <input type="password" name="password1" id="password1" value="" placeholder="Tu contraseña..." class="register-input"></td>
                             <td> <span id="errorPassword1" style="color:red">'''+errorPassword1+''' </td>
                         </tr>
                         <tr>
                             <td class="label">Repetir Password </td>
-                            <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes"> </td>
+                            <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes" class="register-input"> </td>
                             <td> <span id="errorPassword" style="color:red">'''+errorPassword+'''</span> </td>
                         </tr>
                         <tr>
                             <td class="label"> Email </td>
-                            <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..."> </td>
+                            <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..." class="register-input"> </td>
                             <td> <span id="errorEmail" style="color:red">'''+errorEmail+'''</span> </td>
                         </tr>
                     </table>
-                    <input type="submit" id="enviar">
+                    <input type="submit" id="enviar" class="register-button">
                 </form>
             </body>
             </html>''')
@@ -145,47 +149,54 @@ class RegisterHandler(webapp2.RequestHandler):
                 datos.put()
                 self.response.write('''
                 <html>
+                    <head>
+                        <link rel="stylesheet" href="styles/estilo.css">
+                    </head>
                     <body>
-                        <h1> DSSW - TAREA 3</h1>
-                        <h2>El registro se ha cmopletado correctamente!</h2>'''
-                                + "Hola " + self.request.get('username')+'''!<br>'''
-                                + "Tu email es " + self.request.get('email')+'''<br><br>
-                        <a href="/registro">Volver</a>
+                        <h1 class="register-title">DSSW - TAREA 3</h1>
+                        <form class="register">
+                        <h2>El registro se ha completado correctamente!</h2><br>'''
+                                + "<p>Hola " + self.request.get('username')+'''!</p><br>'''
+                                + "<p>Tu email es " + self.request.get('email')+'''</p><br><br>
+                            <a href="/registro" class="register-button">Volver</a>
+                        </form>
                     </body>
                 </html>''')
             else:
                 self.response.write('''
                     <html>
                     <head>
+                    <link rel="stylesheet" href="styles/estilo.css">
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                     </head>
                     <body>
-                    <form method="post" id="login">
+                    <h1 class="register-title">DSSW - TAREA 3</h1>
+                    <form method="post" id="login" class="register">
                     <table>
                     <tr>
                     <td class="label"> Nombre de usuario </td>
-                    <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." > </td>
+                    <td> <input type="text" name="username" id="username" value="" placeholder="Tu nombre..." class="register-input"> </td>
                     <td> <span id="errorUsername" style="color:red"></span> </td>
                     </tr>
                     <tr>
                     <td class="label"> Password </td>
-                    <td> <input type="password" name="password" id="password1" value="" placeholder="Tu contraseña..."></td>
+                    <td> <input type="password" name="password" id="password1" value="" placeholder="Tu contraseña..." class="register-input"></td>
                     <td> <span id="errorPassword1" style="color:red"></span> </td>
                     </tr>
                     <tr>
                     <td class="label">Repetir Password </td>
-                    <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes"> </td>
+                    <td> <input type="password" name="password2" id="password2" value="" placeholder="El mismo de antes" class="register-input"> </td>
                     <td> <span id="errorPassword" style="color:red"></span> </td>
                     </tr>
                     <tr>
                     <td class="label"> Email </td>
-                    <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..."> </td>
+                    <td> <input type="text" name="email" value="" id="email" placeholder="Tu email..." class="register-input"> </td>
                     <td> <span id="errorEmail" style="color:red"></span> </td>
                     </tr>
                     </table>
-                    <input type="submit" id="enviar">
-                    </form>
+                    <input type="submit" id="enviar" class="register-button">
                     <span id="errorDatos" style="color:red"> Ese '''+errorDatos+''' ya existe!</span>
+                    </form>
                     </body>
                     </html>''')
                       
